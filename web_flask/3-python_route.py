@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-'''A script that starts a Flask web application with 2 routes'''
+'''A script that starts a Flask web application with 4 routes'''
 from flask import Flask
 
 # create an instance of this class
@@ -23,7 +23,18 @@ def hello_hbnb():
 def hello_c(text):
     '''display “C ” followed by the value of the text variable'''
     new_text = text.replace("_", " ")
-    return f"C {new_text}"
+    return "C {}".format(new_text)
+
+
+@app.route('/python/<text>', strict_slashes=False)
+@app.route('/python', strict_slashes=False)
+def python(text ="is cool"):
+    '''display python followed by the value of the text variable
+    replace underscore _ symbols with a space
+    The default value of text is “is cool”
+    '''
+    new_text = text.replace("_", " ")
+    return "Python {}".format(new_text)
 
 
 if __name__ == '__main__':
