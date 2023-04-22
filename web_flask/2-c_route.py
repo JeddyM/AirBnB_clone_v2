@@ -22,7 +22,7 @@ def hello_hbnb():
 @app.route('/c/<text>', strict_slashes=False)
 def hello_c(text):
     '''display “C ” followed by the value of the text variable'''
-    return f"C is {text}"
+    return f"C {text.replace("_", " ")}"
 
 
 if __name__ == '__main__':
