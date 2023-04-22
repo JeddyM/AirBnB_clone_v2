@@ -23,7 +23,7 @@ def hello_hbnb():
 def hello_c(text):
     '''display “C ” followed by the value of the text variable'''
     new_text = text.replace("_", " ")
-    return f"C {new_text}"
+    return "C {}".format(new_text)
 
 
 if __name__ == '__main__':
